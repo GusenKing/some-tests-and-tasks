@@ -1,0 +1,26 @@
+@model ProductsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <ul style="display: inline">
+        @foreach (var e in Model.Products)
+        {
+            <li style="font-size: 30px">
+                @e.ProductName
+            </li>
+            <a asp-controller="Home", asp-action="@e.ProductName" style="border: 1px #000000">Подробности</a>
+        }
+    </ul>
+</div>
+</body>
+</html>
