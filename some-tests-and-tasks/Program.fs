@@ -1,4 +1,6 @@
-﻿type Message =
+﻿open System.Threading
+
+type Message =
     | BlankName
     | NameTooLong
 
@@ -24,8 +26,8 @@ let tee deadEndFunction oneTrackInput =
     deadEndFunction oneTrackInput
     oneTrackInput
 
-let receiveRequest =
-    "some request"
+let receiveRequest token=
+    Success "some request"
 
 let nameNotBlank (input : string) =
     if input.Length = 0 then Failure BlankName
@@ -33,7 +35,7 @@ let nameNotBlank (input : string) =
 
 let name50 (input : string) =
     if input.Length > 50 then Failure NameTooLong
-    else Success input
+    *else Success input
 
 let validateRequest twoTrackInput : Result<string> =
     twoTrackInput
@@ -56,7 +58,10 @@ let updateDbFromRequest request =
 let sendEmailLogic request =
     //email sending logic
     ()
-
+    
+    
+    
+    
 let sendEmail request =
     tee sendEmailLogic request
 
@@ -75,3 +80,5 @@ let updateCustomerWithErrorHandling =
     >> updateDbFromRequest
     >> sendEmail
     >> returnMessage
+
+let result = updateCustomerWithErrorHandling 1
