@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Models;
+using DbFilter.Models;
 
-namespace WebApplication1.Controllers;
+namespace DbFilter.Controllers;
 
 public class HomeController : Controller
 {
@@ -18,7 +18,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult About()
+    public IActionResult Privacy()
     {
         return View();
     }

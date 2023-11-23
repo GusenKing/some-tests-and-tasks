@@ -18,7 +18,7 @@
             <li style="font-size: 30px">
                 @e.ProductName
             </li>
-            <a asp-controller="Home", asp-action="@e.ProductName" style="border: 1px #000000">Подробности</a>
+            <a asp-controller="Products", asp-action="Details", asp-route-id="@e.Id" style="border: 1px #000000">Подробности</a>
         }
     </ul>
 </div>
