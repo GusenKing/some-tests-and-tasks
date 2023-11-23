@@ -35,7 +35,7 @@ let nameNotBlank (input : string) =
 
 let name50 (input : string) =
     if input.Length > 50 then Failure NameTooLong
-    *else Success input
+    else Success input
 
 let validateRequest twoTrackInput : Result<string> =
     twoTrackInput
