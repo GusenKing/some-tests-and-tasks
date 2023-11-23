@@ -1,0 +1,16 @@
+﻿@using MVCEExtension.Extensions
+@model MVCEExtension.Models.CalculatorViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @using (Html.BeginForm())
+    {
+        <input type="number" name="FirstNumber"></input>
+        <input type="text" name="Operation"></input>
+        <input type="number" name="SecondNumber"></input>
+        <button type="submit" class="btn btn-primary mt-2">Вычислить</button>
+        @Html.CalculateAndShowResult()
+    }
+</div>
